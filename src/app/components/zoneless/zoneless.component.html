@@ -1,0 +1,43 @@
+<div class="zoneless-container">
+
+    <div class="selected-summary">
+        <span (click)="clearSelection()" class="toggle-icon icon-minus"></span>
+        <span>{{ getSelectedSummary() }}</span>
+    </div>
+
+    <div class="filter-container" #filterContainer>
+
+        <button (click)="handleButtonClick()" class="toggle-button">
+            <span class="toggle-icon" [class.closed]="!isListOpen" [ngClass]="getToggleIconClass()"></span>
+            <span class="toggle-text" [class.closed]="!isListOpen">{{ getButtonText() }}</span>
+        </button>
+
+        <ul class="filters" *ngIf="isListOpen">
+
+            <!-- Main filters -->
+            <li *ngFor="let filter of filters" class="filters__item">
+                <div class="filters__line">
+                    <input type="checkbox" [checked]="filter.selected" (change)="toggleFilter(filter)"
+                        id="{{filter.id}}" />
+                    <label for="{{filter.id}}">
+                        <span class="custom-checkbox"></span>
+                        {{ filter.name }}
+                    </label>
+                </div>
+
+                <!-- Subfilters -->
+                <ul *ngIf="filter.subFilters" class="subfilters">
+                    <li *ngFor="let sub of filter.subFilters" class="filters__line" [ngClass]="sub.id">
+                        <input type="checkbox" [checked]="sub.selected" (change)="toggleSubFilter(filter, sub)"
+                            id="{{sub.id}}" />
+                        <label for="{{sub.id}}">
+                            <span class="custom-checkbox"></span>
+                            {{ sub.name }}
+                        </label>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</div>
