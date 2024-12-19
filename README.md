@@ -1,27 +1,24 @@
-# Funnels
+# Angular Zoneless Filters
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+Проект создан с использованием [Angular CLI](https://github.com/angular/angular-cli) версии 18.1.2.
 
-## Development server
+Этот репозиторий содержит компонент для динамической фильтрации списка. Управление состоянием происходит через IndexedDB. Zoneless обеспечивает постоянную работу компонента. Основные функции:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Динамический текст кнопки: кнопка-переключатель адаптирует свою метку в зависимости от состояния фильтра, предлагая такие опции, как «Открыть фильтры», «Выбрать все» и «Очистить выбор».
+- Пользовательские флажки: стилизованные флажки со значками галочки и минуса улучшают визуальную привлекательность и взаимодействие с пользователем.
+- Постоянное состояние: выбор пользователя сохраняется локально с помощью IndexedDB, что гарантирует сохранение настроек в сеансах.
+- Адаптивный макет: разработан для различных размеров экрана, что делает его подходящим как для настольных, так и для мобильных приложений.
+- Эффекты наведения и визуальные улучшения: улучшенная эстетика с тенями блоков и изменением цвета состояния наведения для лучшей обратной связи с пользователем.
+- Этот компонент подходит для приложений, которым требуются надежные механизмы фильтрации, такие как платформы электронной коммерции, панели мониторинга и инструменты управления данными. Zoneless легко интегрируется в существующие проекты Angular, обеспечивает гибкость и настраиваемость для удовлетворения различных потребностей проекта.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Быстрый старт
+1. Клонируйте репозиторий:
+`git clone https://github.com/oso4lq/angular-zoneless-filters`
+2. Перейдите в каталог проекта:
+`cd zoneless`
+3. Установите зависимости:
+`npm install`
+4. Запустите приложение:
+`ng serve`
+5. Доступ в браузере: 
+откройте `http://localhost:4200` в своем веб-браузере.
